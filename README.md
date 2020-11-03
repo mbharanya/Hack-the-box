@@ -1,5 +1,12 @@
 # Cheatsheet
 
+## Evaluation
+```bash
+# Shows version information
+nmap -sC -sV -oA <ip>
+```
+## Reverse shell
+
 Listen locally with nc
 ```
 nc -lvnp 4444
@@ -81,3 +88,9 @@ prefix key: ctrl+b
 # Detection evasion
 ## Linux
 `/dev/shm` is a ramdisk -> not saved for ever
+
+# Note keeping
+Cherry Tree - Hierarchical tool with code highlight and screen capture
+
+# Resources
+http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
