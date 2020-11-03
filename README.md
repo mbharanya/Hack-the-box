@@ -70,7 +70,8 @@ prefix key: ctrl+b
 |"|horizontal split|
 |arrow keys|move to pane|
 |z|toggle zoom into pane|
-|$|rename tab|
+|$|rename session|
+|,|rename tab|
 |space|cycle looks|
 |t|show time|
 
