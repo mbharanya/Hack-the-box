@@ -72,6 +72,7 @@ prefix key: ctrl+b
 |z|toggle zoom into pane|
 |$|rename tab|
 |space|cycle looks|
+|t|show time|
 
 
 
