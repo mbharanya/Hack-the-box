@@ -1,5 +1,6 @@
 # Solidstate writeup
 ## Discovery
+As always we want to figure out what services are running on our target. Let's run nmap:  
 ```bash
 # Nmap 7.91 scan initiated Thu Jan  7 10:19:03 2021 as: nmap -v -sC -sV -Pn -oN nmap 10.10.10.51
 Nmap scan report for 10.10.10.51
