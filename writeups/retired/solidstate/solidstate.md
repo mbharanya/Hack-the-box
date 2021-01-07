@@ -152,7 +152,7 @@ rm -r /tmp/*
 Let's change it to execute a reverse shell:
 ![](2021-01-07-14-03-43.png)
 
-And we're root!
+And we're root!  
 ![](2021-01-07-14-04-02.png)
 
 ![](2021-01-07-15-01-58.png)
