@@ -243,7 +243,7 @@ smb: \> recurse ON
 smb: \> prompt OFF
 smb: \> mget *
 
-
+```
 kali@kali:~/htb/boxes/active/10.10.10.100$ tree active.htb/
 active.htb/
 ├── DfsrPrivate
@@ -276,7 +276,7 @@ active.htb/
 └── scripts
 
 21 directories, 7 files
-
+```
 ![](2021-01-12-15-08-34.png)
 
 https://pentestlab.blog/tag/cpassword/

